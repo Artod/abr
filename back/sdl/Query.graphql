@@ -1,0 +1,19 @@
+# type DownloadArtifact {
+#   _id: String!
+#   body: String
+# }
+
+type Artifact {
+  _id: String!
+  name: String
+}
+
+type Artifacts {
+  _id: String!
+  artifacts: [Artifact]
+}
+
+type Query {
+  downloadArtifact(_id: String!): String
+  run(_id: String!): Artifacts!
+}

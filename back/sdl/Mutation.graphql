@@ -1,0 +1,27 @@
+enum RunStatus {
+  NEW
+  QUEUED
+  TRAINING_START
+  TRAINING_DONE
+  COMPILE_START
+  COMPILE_DONE
+  METRICS_START
+  METRICS_DONE
+  ERROR
+}
+
+type Hardware {
+  _id: String!
+  name: String!
+}
+
+type Run {
+  _id: String!
+  name: String
+  hardware: Hardware!
+  status: RunStatus!
+}
+
+type Mutation {
+  startOptimize(run: String!): Run!
+}
